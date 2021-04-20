@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+$main-clr: #E37AB0;
+$sub-clr: #FFF7FB;
+
+// -------------- header ---------------
+.header {
+  width: 100%;
+  &-wrap__logo {
+    width: 150px;
+    margin: 16px auto 16.3px 19px;
+  }
+  &-wrap__nav,
+  &-wrap__button {
+    display: none;
+  }
+}
+
+// -------------- firstview ---------------
+.firstview {
+  width: 100%;
+
+  &-wrap {
+    position: relative;
+    width: 100%;
+  }
+  &-wrap__txt {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+  &-wrap__txt-ttl {
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 40px;
+    width: 320px;
+    margin: 40px auto 25px auto;
+  }
+  &-wrap__txt-content {
+    font-size: 1em;
+    font-weight: 400;
+    width: 80%;
+    margin: 0 auto;
+  }
+  &-wrap__txt-img-pc {
+    display: none;
+  }
+  &-wrap__img-sp {
+    width: 80%;
+    top:0;
+    margin: 0 auto;
+
+  }
+  &-wrap__img-fv {
+    position: absolute;
+    width: 80%;
+    top: 200px;
+    left: 10%;
+
+  }
+  &-wrap__txt-dl-btn {
+    background-color: $main-clr;
+    line-height: 60px;
+    border-radius: 30px;
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin: 90% auto 0 auto;
+  }
+  &-wrap__txt-dl-btn a{
+    color: #fff;
+  }
+}
+
+
+// -------------- about ---------------
+.about-wrap {
+  width: 100%;
+  background-color: $sub-clr;
+  padding-bottom: 70px;
+  &__ttl {
+    font-size: 16px;
+    font-weight: 700;
+    width: 320px;
+    margin: 0 auto;
+    padding: 70px 10px 25px 10px;
+  }
+  &__img {
+    width: 67%;
+    margin: 0 auto;
+  }
+}
+
+// -------------- trouble ---------------
+
+.trouble {
+  padding: 70px 20px;
+  &__ttl {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &-wrap__item {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+  &-wrap__item:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+  &-wrap__img:nth-child(2) {
+    justify-content: flex-end;
+  }
+  &-wrap__img img {
+    width: 70%;
+    border:1px solid yellow;
+  }
+  &-wrap__txt {
+    font-weight: 700;
+    border: 1px solid red;
+    width: 70%;
+    
+  }
+}
