@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html {
+  overflow: auto;
+}
 
 img {
   width: 100%;
@@ -15,6 +18,7 @@ li {
 
 body {
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 $main-clr: #E37AB0;
@@ -31,10 +35,70 @@ $accent-clr: #6F99E3;
       margin: 16px auto 16.3px 19px;
     }
     &__nav,
-    &__button {
+    &__button-pink, &__button-blue {
       display: none;
     }
   }
+}
+@media screen and (min-width:769px){
+.flex__item {
+  display: flex;
+}
+.header {
+  width: 100vw;
+  &-wrap {
+    width: 100vw;
+    align-items: center;
+    &__logo {
+      margin-left: 13%;
+    }
+    &__nav {
+      display: block;
+      &-list {
+        width: 100%;
+        & a {
+          color: #000;
+          margin-left: 13px;
+          &:hover {
+            border-bottom: 3px solid $accent-clr;
+          }
+        }
+      }
+    }
+    &__button {
+      display: block;
+      &-pink {
+        display: block;
+        background: $main-clr;
+        border-radius: 30px;
+        padding: 15px 27px;
+        margin-left: 3%;
+        &:hover {
+            background: darken($main-clr, 10%);
+        }
+        & a {
+            font-size: 14px;
+            color: #fff;
+        }
+      }
+      &-blue {
+        display: block;
+        margin-left: 2%;
+        margin-right: 3%;
+        background: $accent-clr;
+        border-radius: 30px;
+        padding: 15px 27px;
+        &:hover {
+          background: darken($accent-clr, 10%);
+        }
+        & a {
+            color: #fff;
+            font-size: 14px;
+        }
+      }
+    }
+  }
+}
 }
 
 // -------------- firstview ---------------
@@ -45,7 +109,6 @@ $accent-clr: #6F99E3;
   &-wrap {
     position: relative;
     width: 100%;
-
     &__txt {
       position: absolute;
       z-index: 1;
@@ -87,14 +150,64 @@ $accent-clr: #6F99E3;
       text-align: center;
       width: 80%;
       margin: 90% auto 0 auto;
-
+      &:hover {
+        background-color: darken($main-clr,10%);
+        cursor: pointer;
+      }
       & a{
         color: #fff;
       }
     }
   }
 }
-
+@media screen and (min-width:769px){
+  .firstview {
+    width: 100%;
+    &-wrap {
+      display: flex;
+      width: 100%;
+      position: relative;
+      &__txt {
+        position: absolute;
+        top: 15%;
+        left: 0;
+        z-index: 1;
+        margin-left: 13%;
+        width: 100%;
+        &-ttl {
+          margin-left: 0;
+          font-size: 3vw;
+          width: 50%;
+        }
+        &-content {
+          margin-left: 0;
+          width: 30%;
+        }
+        &-dl-btn {
+          margin: 3% 0 0 0;
+          width: 25%;
+        }
+        &-img-pc {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        }
+      }
+      &__img-sp {
+          display: none;
+      }
+      &__img-fv {
+        width: 30%;
+        margin: 0 0 0 auto;
+        position: absolute;
+        top: 0;
+        right: 15%;
+      }
+    }
+  }
+}
 
 
 // -------------- about ---------------
@@ -113,6 +226,29 @@ $accent-clr: #6F99E3;
   &__img {
     width: 67%;
     margin: 0 auto;
+  }
+}
+@media screen and (min-width:769px){
+  .about-wrap {
+    position:relative;
+    z-index: 1;
+    top: -150px;
+    height: 600px;
+    &__ttl {
+      font-size: 2vw;;
+      width: 40%;
+      margin-right: 50px;
+      padding: 0;
+      position: absolute;
+      top:250px;
+      right: 20px;
+    }
+    &__img {
+      width: 50%;
+      position: absolute;
+      top: 70px;
+      left: -10px;
+    }
   }
 }
 
@@ -140,6 +276,34 @@ $accent-clr: #6F99E3;
     &__txt {
       font-weight: 700;
       margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (min-width:769px){
+  .trouble {
+    &__ttl {
+      font-size: 38px;
+      padding-bottom: 80px;
+    }
+    &-wrap {
+      display: flex;
+      justify-content: center;
+      &__item {
+        display: block;
+        font-size: 22px;
+        margin-left: 30px;
+        &:nth-child(2) {
+        flex-direction: row;
+        }
+        &:first-child {
+          margin-top: 22px;
+        }
+      }
+      &__txt {
+        padding-top: 20px;
+        width: 70%;
+      }
     }
   }
 }
@@ -174,7 +338,50 @@ $accent-clr: #6F99E3;
     }
   }
 }
-
+@media screen and (min-width:769px){
+  .solution {
+    &__ttl {
+      font-size: 38px;
+      font-weight: 700;
+    }
+    &-wrap__item {
+      position: relative;
+      &-ttl {
+        width: 30%;
+        margin-left: 20%;
+        &-w {
+          padding-top: 20%;
+        }
+        &-num {
+          font-size: 40px;
+          padding-top: 10px;
+        }
+        &-txt {
+          width: 80%;
+          font-size: 32px;
+          font-weight: 700;
+        }
+        &-content {
+          width: 89%;
+        }
+      }
+      &-img {
+        width: 30%;
+      }
+    }
+  }
+  .mix__item {
+    flex-direction: row-reverse;
+    width: 100%;
+    &-ttl {
+      margin: 0 19%;
+    }
+    &-img {
+      margin-left: 15%;
+      margin: 0 -16%;
+    }
+  }
+}
 // -------------- feature ---------------
 
 .feature {
@@ -196,6 +403,9 @@ $accent-clr: #6F99E3;
       border-radius: 15px;
       padding: 20px;
       margin: 10px;
+      & a {
+        color: #000;
+      }
       & img {
         width: 30vw;
         margin-bottom: 5px;
@@ -206,6 +416,33 @@ $accent-clr: #6F99E3;
     }
   }
 }
+@media screen and (min-width:769px){
+  .feature {
+    &__ttl {
+      font-size: 38px;
+      font-weight: 700;
+    }
+    &-wrap {
+      &__item {
+        align-items: center;
+        justify-content: center;
+      }
+      &__smitem {
+        width: 30%;
+        & a {
+          color: #000;
+        }
+        & img {
+          width: 100%;
+        }
+        &:hover {
+          background: lighten($main-clr,30%);
+        }
+      }
+    }
+  }
+}
+
 
 
 // -------------- cta-section ---------------
@@ -217,29 +454,61 @@ $accent-clr: #6F99E3;
     color: #fff;
     font-size: 20px;
     text-align: center;
-    width: 90%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__btn {
     margin: 0 auto;
   }
   &__btn-new {
+    display: inline-block;
     background: $accent-clr;
     border-radius: 30px;
     text-align: center;
     line-height: 60px;
     margin: 40px auto 25px auto;
-    width: 90%;
-    & a {
-      color: #fff;
+    width: 100%;
+    color: #fff;
+    &:hover {
+      background-color: darken($accent-clr, 10%);
+      cursor: pointer;
     }
   }
   &__btn-dl {
+    display: inline-block;
     background: #fff;
     border-radius: 30px;
     text-align: center;
     line-height: 60px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+    color: $main-clr;
+    &:hover {
+      background: lighten($main-clr,5%);
+      cursor: pointer;
+      color: #fff;
+    }
     & a {
       color: $main-clr;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:769px){
+  .cta-sec {
+    &__ttl {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    &__btn {
+      width: 65%;
+      margin: 0 auto;
+      &-dl {
+        margin: 40px auto 25px 10px;
+      }
     }
   }
 }
@@ -247,7 +516,6 @@ $accent-clr: #6F99E3;
 // -------------- case ---------------
 
 .case {
-  // white-space: nowrap;
   &__ttl {
     font-size: 26px;
     text-align: center;
@@ -256,6 +524,7 @@ $accent-clr: #6F99E3;
   &-wrap {
     display: flex;
     white-space: nowrap;
+    width: 200vw;
     &__item {
       box-shadow: 0 0 6px #DDDDDD;
       border-radius: 15px;
@@ -289,15 +558,32 @@ $accent-clr: #6F99E3;
         font-size: 20px;
         font-weight: 700;
         margin-left: 20px;
-        border: 1px solid green;
         width: 80%;
         overflow-wrap: break-word;
+        white-space: normal;
       }
     }
   }
 }
 
-
+@media screen and (min-width:769px){
+  .case {
+    &__ttl {
+      font-size: 38px;
+      text-align: center;
+      margin: 70px auto 40px auto;
+    }
+    &-wrap {
+      width: 100vw;
+      &__item {
+      margin-right: 15px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
 
 // -------------- price ---------------
 
@@ -357,9 +643,31 @@ $accent-clr: #6F99E3;
       border-radius: 30px;
       padding: 20px;
       margin-top: 25px;
+      &:hover {
+        background: #d1d0d0;
+        cursor: pointer;
+      }
 
       & a {
         color:#000;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:769px){
+  .price {
+    &__ttl {
+      font-size: 38px;
+      font-weight: 700;
+    }
+    &-wrap {
+      width: 80%;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      &__item {
+        width: 100%;
       }
     }
   }
@@ -412,10 +720,25 @@ $accent-clr: #6F99E3;
         position: absolute;
         content:"A";
         color: $accent-clr;
-        top: 30%;
-        left: 10px;
+        top: 45px;
+        left: 15px;
         transform: translate(0,-50%);
         font-weight: 700;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:769px){
+  .qa {
+    &__ttl {
+      font-size: 38px;
+      font-weight: 700;
+    }
+    &-list {
+      &__item {
+        width: 60%;
+        margin: 0 auto;
       }
     }
   }
@@ -428,21 +751,53 @@ $accent-clr: #6F99E3;
 
   &-wrap {
     padding-top: 70px;
-
     &__logo {
       width: 150px;
       margin-left: 19px;
     }
     &__nav {
-      padding: 10px 0 70px 50px;
-
-      & li a {
+      margin-left: 60px;
+      margin-bottom: 100px;
+      &-center{
+        width: 100%;
+        & a {
         line-height: 40px;
         color: #000;
+        }
+      }
+      &-right {
+        width: 100%;
+        & a {
+          line-height: 40px;
+          color: #000;
+        }
       }
     }
   }
   .footer-copyright {
     text-align: center;
+  }
+}
+
+@media screen and (min-width:769px){
+  .footer {
+    &-wrap {
+      &__sub {
+        display: flex;
+        margin: 0 auto;
+        width: 60%;
+      }
+      &__logo {
+      margin-left: 0;
+      }
+      &__nav {
+        display: flex;
+        width: 100%;
+        &-center {
+        margin-left: 25%;
+        margin-right: 20%;
+        }
+      }
+    }
   }
 }
