@@ -516,6 +516,7 @@ $accent-clr: #6F99E3;
 // -------------- case ---------------
 
 .case {
+  overflow: scroll;
   &__ttl {
     font-size: 26px;
     text-align: center;

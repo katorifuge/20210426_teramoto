@@ -514,6 +514,10 @@ body {
   }
 }
 
+.case {
+  overflow: scroll;
+}
+
 .case__ttl {
   font-size: 26px;
   text-align: center;
